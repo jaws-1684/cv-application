@@ -15,7 +15,7 @@ export default function Form() {
   const [data, setData] = useState(PERSON_INFORMATION);
   const counters = Object.assign(...Object.keys(data).map(k => ({ [k]: data[k].length })))
   const [counter, setCounter] = useState(counters);
-  const [isSubmited, setIsSubmited] = useState(true);
+  const [isSubmited, setIsSubmited] = useState(false);
   const [section, setSection] = useState(0)
 
 
