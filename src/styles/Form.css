@@ -1,0 +1,83 @@
+.form {
+	min-width: 50vw;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	margin: 20px;
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.f-actions {
+	align-self: start;
+	display: flex;
+	gap: 10px;
+}
+.controls > button:hover {
+	color: lightblue;
+}
+.f-button.add{
+	background-color: lightgreen;
+	color: darkgreen;
+}
+.f-button.rm{
+	background-color: palevioletred;
+	color: darkred;
+}
+
+.generate {
+	align-self: center;
+	font-weight: bold;
+	width: 100%;
+	color: white;
+	background-color: darkblue;
+}
+.generate:hover {
+	transform: scale(1.05);
+}
+
+fieldset {
+	padding: 20px;
+	width: 60vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+	gap: 30px;
+	background-color: #f9f9f9;
+	border: 1px solid lightgray;
+	border-radius: 10px;
+}
+label {
+	color: black;
+	font-size: 16px;
+}
+.field {
+	min-width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+textarea {
+	padding: 5px;
+	height: 40px;
+	width: 100%;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+}
+button {
+	width: fit-content;
+}
+
+.controls {
+	align-self: end;
+}
+
+.controls > button {
+	background-color: white;
+	border: none;
+	color: darkblue;
+}
