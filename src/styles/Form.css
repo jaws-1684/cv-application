@@ -63,7 +63,8 @@ label {
 
 textarea {
 	padding: 5px;
-	height: 40px;
+	min-height: 40px;
+	field-sizing: content;
 	width: 100%;
 	border: 1px solid lightgray;
 	border-radius: 5px;

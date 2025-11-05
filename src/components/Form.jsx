@@ -68,6 +68,10 @@ export default function Form() {
   }
   const sections = [
   {
+    title: "Profile",
+    content: <Fieldset className="profile" data={data.profile[0]} onChangeHandler={fns.onChange}/>
+    },   
+  {
     title: "General",
     content: <Fieldset className="general" data={data.general[0]} onChangeHandler={fns.onChange}/>
     }, 

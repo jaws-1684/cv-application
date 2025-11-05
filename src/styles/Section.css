@@ -46,7 +46,14 @@
 }
 .left {
 	background-color: white;
+	font-weight: 600;
 }
 .right {
 	background-color: #e5e5e5;
 }
+.job-description {
+	color: rgb(123, 128, 132);
+}
+.job-description > p {
+	text-indent:20px;
+} 
