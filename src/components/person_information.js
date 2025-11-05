@@ -50,24 +50,23 @@ export const PERSON_INFORMATION = {
     }
   ],
   skills: [
-    { id: 0, name: "Python", level: 10 },
-    { id: 1, name: "JavaScript", level: 9 },
-    { id: 2, name: "React", level: 9 },
-    { id: 3, name: "Node.js", level: 8 },
-    { id: 4, name: "TypeScript", level: 8 },
-    { id: 5, name: "SQL", level: 8 }
+    { id: 0, skill: "Python", level: 10 },
+    { id: 1, skill: "JavaScript", level: 9 },
+    { id: 2, skill: "React", level: 9 },
+    { id: 3, skill: "Node.js", level: 8 },
+    { id: 4, skill: "SQL", level: 8 }
   ],
   languages: [
-    { id: 0, name: "English", level: 10 },
-    { id: 1, name: "Spanish", level: 8 },
-    { id: 2, name: "German", level: 6 }
+    { id: 0, language: "English", level: 10 },
+    { id: 1, language: "Spanish", level: 8 },
+    { id: 2, language: "Russian", level: 6 }
   ],
   achievements: [
-    { id: 0, content: "Developed and deployed a high-traffic web application serving over 1M users worldwide." },
-    { id: 1, content: "Led a cybersecurity initiative that reduced system vulnerabilities by 40%." },
-    { id: 2, content: "Awarded 'Employee of the Year' for outstanding performance and innovation." },
-    { id: 3, content: "Published an open-source library with 5k+ GitHub stars." },
-    { id: 4, content: "Speaker at the 2023 London Tech Summit on cloud security best practices." }
+    { id: 0, achievement: "Developed and deployed a high-traffic web application serving over 1M users worldwide." },
+    { id: 1, achievement: "Led a cybersecurity initiative that reduced system vulnerabilities by 40%." },
+    { id: 2, achievement: "Awarded 'Employee of the Year' for outstanding performance and innovation." },
+    { id: 3, achievement: "Published an open-source library with 5k+ GitHub stars." },
+    { id: 4, achievement: "Speaker at the 2023 London Tech Summit on cloud security best practices." }
   ]
 
 }

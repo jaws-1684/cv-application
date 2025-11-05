@@ -15,6 +15,7 @@ export function Input(props) {
   return(
      <textarea
         id={props.id}
+        pattern={props.pattern}
         value={props.value}
         data-parent={props.dataparent}
         data-index={props.dataindex}
@@ -28,7 +29,9 @@ export function Input(props) {
 export function ElasticFieldset(props) {
   const { counter, className, data, onChangeHandler, onAddHandler, onRemoveHandler } = props
   const fieldsets = Array.from(Array(counter)).map((c, i) => {
-    return <Fieldset key={i.toString()} className={className} data={data[i]} onChangeHandler={onChangeHandler}/>
+    return <>
+      <Fieldset counter={counter} key={i.toString()} className={className} data={data[i]} onChangeHandler={onChangeHandler}/>
+      </>
     })
   
   return(<div className="container">
@@ -44,16 +47,17 @@ function Info() {
   return <p style={{fontSize: "12px"}}>If you want a list separate the sentences by semicolons</p>
 }
 export function Fieldset(props) {
-  const { data, className, onChangeHandler } = props
+  const { data, className, onChangeHandler} = props
   return <fieldset className={className}>{
     Object.entries(data).filter(([k, v]) => k !== "id").map(([k, v], i) => {
       let id = data.id
       let name = className + '_' + k + "_" + id
       return <div className="field" key={name}>
-        <Label name={name} content={format(k)}/>
+        <Label name={name} content={format(k) }/>
         <Input
           id={name}
           value={v}
+          pattern={k === "level" ? "[0-9]*" : ""}
           dataparent={className}
           dataindex={id}
           dataname={k}

@@ -11,15 +11,13 @@ function duplicateFields(obj) {
   }
   return newField
 }
- 
 export default function Form() {
   const [data, setData] = useState(PERSON_INFORMATION);
-  const [counter, setCounter] = useState({
-    education: 1,
-    experience: 1
-  });
+  const counters = Object.assign(...Object.keys(data).map(k => ({ [k]: data[k].length })))
+  const [counter, setCounter] = useState(counters);
   const [isSubmited, setIsSubmited] = useState(true);
   const [section, setSection] = useState(0)
+  
 
   function onSubmitHandler(e) {
     e.preventDefault()
@@ -54,6 +52,7 @@ export default function Form() {
       const {parent, index, name} = target.dataset
       let dup = {...data}
       dup[parent][Number(index)][name] = target.value
+
       setData(dup)
     },
     onRemove: (e) => {
@@ -88,7 +87,31 @@ export default function Form() {
       onChangeHandler={fns.onChange}
       onAddHandler={fns.onAdd}
       onRemoveHandler={fns.onRemove} />  
-  }]
+  },
+  {
+    title: "Skills",
+    content: <ElasticFieldset counter={counter.skills} className="skills" data={data.skills} 
+      onChangeHandler={fns.onChange}
+      onAddHandler={fns.onAdd}
+      onRemoveHandler={fns.onRemove} />  
+  },
+  {
+    title: "Languages",
+    content: <ElasticFieldset counter={counter.languages} className="languages" data={data.languages} 
+      onChangeHandler={fns.onChange}
+      onAddHandler={fns.onAdd}
+      onRemoveHandler={fns.onRemove} />  
+  },
+  {
+    title: "Achievements",
+    content: <ElasticFieldset counter={counter.achievements} className="achievements" data={data.achievements} 
+      onChangeHandler={fns.onChange}
+      onAddHandler={fns.onAdd}
+      onRemoveHandler={fns.onRemove} />  
+  }
+
+
+]
  
   return (
     <form className="form" onSubmit={onSubmitHandler}>
