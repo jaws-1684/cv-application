@@ -29,9 +29,7 @@ export function Input(props) {
 export function ElasticFieldset(props) {
   const { counter, className, data, onChangeHandler, onAddHandler, onRemoveHandler } = props
   const fieldsets = Array.from(Array(counter)).map((c, i) => {
-    return <>
-      <Fieldset counter={counter} key={i.toString()} className={className} data={data[i]} onChangeHandler={onChangeHandler}/>
-      </>
+    return <Fieldset counter={counter} key={i.toString()} className={className} data={data[i]} onChangeHandler={onChangeHandler}/>
     })
   
   return(<div className="container">
@@ -51,7 +49,7 @@ export function Fieldset(props) {
   return <fieldset className={className}>{
     Object.entries(data).filter(([k, v]) => k !== "id").map(([k, v], i) => {
       let id = data.id
-      let name = className + '_' + k + "_" + id
+      let name = className + '_' + k + "_" + id + "_" + i
       return <div className="field" key={name}>
         <Label name={name} content={format(k) }/>
         <Input

@@ -13,7 +13,7 @@ function Responsibilities({responsibilities}) {
 	if (!responsibilities.includes(";")) {
 		return <p className="para">{responsibilities}</p>
 	}
-	return <ul>{responsibilities.split(";").map(s => <li>{s}</li>)}</ul>
+	return <ul>{responsibilities.split(";").map((s, index) => <li key={index}>{s}</li>)}</ul>
 }
 export function EduSection({edudata}) {
 	return (<div className="education-item">
@@ -131,7 +131,7 @@ export function AchievementsSection({achievementdata}) {
    
   </div>
   <div className="achievements">
-    <ul id="achievements">{achievementdata.map(achievement => <li>{achievement.achievement}</li>)}</ul>
+    <ul id="achievements">{achievementdata.map(achievement => <li key={"achievement" + achievement.id}>{achievement.achievement}</li>)}</ul>
   </div>
 </div>)
 }

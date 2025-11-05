@@ -29,18 +29,18 @@ function Main({data}) {
 	return(<div className="main">
 					<div className="left">
 						<h3>Profile</h3>
-						{data.profile.map(obj => <ProfileSection profiledata={obj}/>)}
+						{data.profile.map(obj => <ProfileSection key={"profile" + obj.id} profiledata={obj}/>)}
 						 <h3>Work experience</h3>
-						{data.experience.map(obj => <JobSection jobdata={obj}/>)}
+						{data.experience.map(obj => <JobSection key={"job" + obj.id} jobdata={obj}/>)}
 							<h3>Education</h3>
-						{data.education.map(obj => <EduSection edudata={obj}/>)}
+						{data.education.map(obj => <EduSection key={"edu" + obj.id} edudata={obj}/>)}
 						
 					</div>
 					<div className="right">
 						<h3>Skills</h3>
-						{data.skills.map(obj => <SkillSection skilldata={obj}/>)}
+						{data.skills.map(obj => <SkillSection key={"skill" + obj.id} skilldata={obj}/>)}
 						<h3>Languages</h3>
-						{data.languages.map(obj => <SkillSection skilldata={obj}/>)}
+						{data.languages.map(obj => <SkillSection key={"language" + obj.id} skilldata={obj}/>)}
 						<AchievementsSection achievementdata={data.achievements} />	
 					</div>
 					
