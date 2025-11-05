@@ -1,4 +1,12 @@
-import {Section, JobSection, EduSection } from "./Section.jsx"
+import {
+	Section, 
+	JobSection, 
+	EduSection, 
+	ProfileSection,
+	SkillSection,
+	AchievementsSection 
+} from "./Section.jsx"
+
 import '../styles/Cv.css'
 
 function fullName(data) {
@@ -16,14 +24,20 @@ export default function Cv({data}) {
 				</div>
 			<div className="main">
 					<div className="left">
-						<h2>Education</h2>
-						{data.education.map(obj => <EduSection edudata={obj}/>)}
-						 <h2>Work experience</h2>
+						<h3>Profile</h3>
+						{data.profile.map(obj => <ProfileSection profiledata={obj}/>)}
+						 <h3>Work experience</h3>
 						{data.experience.map(obj => <JobSection jobdata={obj}/>)}
+							<h3>Education</h3>
+						{data.education.map(obj => <EduSection edudata={obj}/>)}
 						
 					</div>
 					<div className="right">
-						
+						<h3>Skills</h3>
+						{data.skills.map(obj => <SkillSection skilldata={obj}/>)}
+						<h3>Languages</h3>
+						{data.languages.map(obj => <SkillSection skilldata={obj}/>)}
+						<AchievementsSection achievementdata={data.achievements} />	
 					</div>
 					
 			</div>	
